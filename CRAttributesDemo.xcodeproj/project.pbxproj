@@ -11,16 +11,23 @@
 		BB0E8B8C277A1B560047DFB4 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B8B277A1B560047DFB4 /* Tests_iOSLaunchTests.swift */; };
 		BB0E8B96277A1B560047DFB4 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B95277A1B560047DFB4 /* Tests_macOS.swift */; };
 		BB0E8B98277A1B560047DFB4 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B97277A1B560047DFB4 /* Tests_macOSLaunchTests.swift */; };
-		BB0E8B99277A1B560047DFB4 /* CRAttributesDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B6E277A1B560047DFB4 /* CRAttributesDemo.xcdatamodeld */; };
-		BB0E8B9A277A1B560047DFB4 /* CRAttributesDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B6E277A1B560047DFB4 /* CRAttributesDemo.xcdatamodeld */; };
 		BB0E8B9B277A1B560047DFB4 /* CRAttributesDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B70277A1B560047DFB4 /* CRAttributesDemoApp.swift */; };
 		BB0E8B9C277A1B560047DFB4 /* CRAttributesDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B70277A1B560047DFB4 /* CRAttributesDemoApp.swift */; };
 		BB0E8B9D277A1B560047DFB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B71277A1B560047DFB4 /* ContentView.swift */; };
 		BB0E8B9E277A1B560047DFB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B71277A1B560047DFB4 /* ContentView.swift */; };
-		BB0E8B9F277A1B560047DFB4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B72277A1B560047DFB4 /* Persistence.swift */; };
-		BB0E8BA0277A1B560047DFB4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B72277A1B560047DFB4 /* Persistence.swift */; };
+		BB0E8B9F277A1B560047DFB4 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B72277A1B560047DFB4 /* Note.swift */; };
+		BB0E8BA0277A1B560047DFB4 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B72277A1B560047DFB4 /* Note.swift */; };
 		BB0E8BA1277A1B560047DFB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0E8B73277A1B560047DFB4 /* Assets.xcassets */; };
 		BB0E8BA2277A1B560047DFB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0E8B73277A1B560047DFB4 /* Assets.xcassets */; };
+		BB95DAF9277A7A5000957FED /* CRAttributes in Frameworks */ = {isa = PBXBuildFile; productRef = BB95DAF8277A7A5000957FED /* CRAttributes */; };
+		BB95DAFB277A7A9900957FED /* CRAttributes in Frameworks */ = {isa = PBXBuildFile; productRef = BB95DAFA277A7A9900957FED /* CRAttributes */; };
+		BB95DAFD277B6E9F00957FED /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DAFC277B6E9F00957FED /* MainView.swift */; };
+		BB95DAFE277B6E9F00957FED /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DAFC277B6E9F00957FED /* MainView.swift */; };
+		BB95DB00277B6EB100957FED /* CRTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DAFF277B6EB100957FED /* CRTextView.swift */; };
+		BB95DB01277B6EB100957FED /* CRTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DAFF277B6EB100957FED /* CRTextView.swift */; };
+		BB95DB06277B6F3A00957FED /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DB05277B6F3A00957FED /* Utils.swift */; };
+		BB95DB07277B6F3A00957FED /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DB05277B6F3A00957FED /* Utils.swift */; };
+		BBBBE2EA279CC192003EC3E5 /* CRAttributesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBE2E9279CC192003EC3E5 /* CRAttributesDemoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +45,19 @@
 			remoteGlobalIDString = BB0E8B7D277A1B560047DFB4;
 			remoteInfo = "CRAttributesDemo (macOS)";
 		};
+		BBBBE2EB279CC192003EC3E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB0E8B69277A1B560047DFB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB0E8B77277A1B560047DFB4;
+			remoteInfo = "CRAttributesDemo (iOS)";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BB0E8B6F277A1B560047DFB4 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		BB0E8B70277A1B560047DFB4 /* CRAttributesDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRAttributesDemoApp.swift; sourceTree = "<group>"; };
 		BB0E8B71277A1B560047DFB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BB0E8B72277A1B560047DFB4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		BB0E8B72277A1B560047DFB4 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		BB0E8B73277A1B560047DFB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB0E8B78277A1B560047DFB4 /* CRAttributesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRAttributesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0E8B7E277A1B560047DFB4 /* CRAttributesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRAttributesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +68,14 @@
 		BB0E8B91277A1B560047DFB4 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0E8B95277A1B560047DFB4 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		BB0E8B97277A1B560047DFB4 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		BB0E8BB2277A1B700047DFB4 /* CRAttributes */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CRAttributes; path = ../CRAttributes; sourceTree = "<group>"; };
+		BB55C689277D0BDE00FCF431 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BB95DAFC277B6E9F00957FED /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BB95DAFF277B6EB100957FED /* CRTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRTextView.swift; sourceTree = "<group>"; };
+		BB95DB05277B6F3A00957FED /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BB95DB08277B70EA00957FED /* CRAttributesDemo (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CRAttributesDemo (iOS).entitlements"; sourceTree = "<group>"; };
+		BBBBE2E7279CC192003EC3E5 /* CRAttributesDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRAttributesDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBBBE2E9279CC192003EC3E5 /* CRAttributesDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRAttributesDemoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB95DAFB277A7A9900957FED /* CRAttributes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB95DAF9277A7A5000957FED /* CRAttributes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,28 +109,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BBBBE2E4279CC192003EC3E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		BB0E8B68277A1B560047DFB4 = {
 			isa = PBXGroup;
 			children = (
+				BB55C689277D0BDE00FCF431 /* README.md */,
+				BB95DB08277B70EA00957FED /* CRAttributesDemo (iOS).entitlements */,
+				BB0E8BB1277A1B700047DFB4 /* Packages */,
 				BB0E8B6D277A1B560047DFB4 /* Shared */,
 				BB0E8B7F277A1B560047DFB4 /* macOS */,
 				BB0E8B88277A1B560047DFB4 /* Tests iOS */,
 				BB0E8B94277A1B560047DFB4 /* Tests macOS */,
+				BBBBE2E8279CC192003EC3E5 /* CRAttributesDemoTests */,
 				BB0E8B79277A1B560047DFB4 /* Products */,
+				BB95DAF7277A7A5000957FED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		BB0E8B6D277A1B560047DFB4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BB95DB09277D03CA00957FED /* Model */,
 				BB0E8B70277A1B560047DFB4 /* CRAttributesDemoApp.swift */,
+				BB95DAFC277B6E9F00957FED /* MainView.swift */,
 				BB0E8B71277A1B560047DFB4 /* ContentView.swift */,
-				BB0E8B72277A1B560047DFB4 /* Persistence.swift */,
+				BB95DAFF277B6EB100957FED /* CRTextView.swift */,
 				BB0E8B73277A1B560047DFB4 /* Assets.xcassets */,
-				BB0E8B6E277A1B560047DFB4 /* CRAttributesDemo.xcdatamodeld */,
+				BB95DB05277B6F3A00957FED /* Utils.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -119,6 +156,7 @@
 				BB0E8B7E277A1B560047DFB4 /* CRAttributesDemo.app */,
 				BB0E8B85277A1B560047DFB4 /* Tests iOS.xctest */,
 				BB0E8B91277A1B560047DFB4 /* Tests macOS.xctest */,
+				BBBBE2E7279CC192003EC3E5 /* CRAttributesDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +187,37 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		BB0E8BB1277A1B700047DFB4 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				BB0E8BB2277A1B700047DFB4 /* CRAttributes */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		BB95DAF7277A7A5000957FED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB95DB09277D03CA00957FED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB0E8B72277A1B560047DFB4 /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBBBE2E8279CC192003EC3E5 /* CRAttributesDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBBBE2E9279CC192003EC3E5 /* CRAttributesDemoTests.swift */,
+			);
+			path = CRAttributesDemoTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +234,9 @@
 			dependencies = (
 			);
 			name = "CRAttributesDemo (iOS)";
+			packageProductDependencies = (
+				BB95DAFA277A7A9900957FED /* CRAttributes */,
+			);
 			productName = "CRAttributesDemo (iOS)";
 			productReference = BB0E8B78277A1B560047DFB4 /* CRAttributesDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -182,6 +254,9 @@
 			dependencies = (
 			);
 			name = "CRAttributesDemo (macOS)";
+			packageProductDependencies = (
+				BB95DAF8277A7A5000957FED /* CRAttributes */,
+			);
 			productName = "CRAttributesDemo (macOS)";
 			productReference = BB0E8B7E277A1B560047DFB4 /* CRAttributesDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -222,6 +297,24 @@
 			productReference = BB0E8B91277A1B560047DFB4 /* Tests macOS.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		BBBBE2E6279CC192003EC3E5 /* CRAttributesDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBBBE2EF279CC192003EC3E5 /* Build configuration list for PBXNativeTarget "CRAttributesDemoTests" */;
+			buildPhases = (
+				BBBBE2E3279CC192003EC3E5 /* Sources */,
+				BBBBE2E4279CC192003EC3E5 /* Frameworks */,
+				BBBBE2E5279CC192003EC3E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBBBE2EC279CC192003EC3E5 /* PBXTargetDependency */,
+			);
+			name = CRAttributesDemoTests;
+			productName = CRAttributesDemoTests;
+			productReference = BBBBE2E7279CC192003EC3E5 /* CRAttributesDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -246,6 +339,10 @@
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = BB0E8B7D277A1B560047DFB4;
 					};
+					BBBBE2E6279CC192003EC3E5 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = BB0E8B77277A1B560047DFB4;
+					};
 				};
 			};
 			buildConfigurationList = BB0E8B6C277A1B560047DFB4 /* Build configuration list for PBXProject "CRAttributesDemo" */;
@@ -265,6 +362,7 @@
 				BB0E8B7D277A1B560047DFB4 /* CRAttributesDemo (macOS) */,
 				BB0E8B84277A1B560047DFB4 /* Tests iOS */,
 				BB0E8B90277A1B560047DFB4 /* Tests macOS */,
+				BBBBE2E6279CC192003EC3E5 /* CRAttributesDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -300,6 +398,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BBBBE2E5279CC192003EC3E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -308,9 +413,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB0E8B9B277A1B560047DFB4 /* CRAttributesDemoApp.swift in Sources */,
-				BB0E8B9F277A1B560047DFB4 /* Persistence.swift in Sources */,
-				BB0E8B99277A1B560047DFB4 /* CRAttributesDemo.xcdatamodeld in Sources */,
+				BB0E8B9F277A1B560047DFB4 /* Note.swift in Sources */,
+				BB95DAFD277B6E9F00957FED /* MainView.swift in Sources */,
+				BB95DB00277B6EB100957FED /* CRTextView.swift in Sources */,
 				BB0E8B9D277A1B560047DFB4 /* ContentView.swift in Sources */,
+				BB95DB06277B6F3A00957FED /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,9 +426,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB0E8B9C277A1B560047DFB4 /* CRAttributesDemoApp.swift in Sources */,
-				BB0E8BA0277A1B560047DFB4 /* Persistence.swift in Sources */,
-				BB0E8B9A277A1B560047DFB4 /* CRAttributesDemo.xcdatamodeld in Sources */,
+				BB0E8BA0277A1B560047DFB4 /* Note.swift in Sources */,
+				BB95DAFE277B6E9F00957FED /* MainView.swift in Sources */,
+				BB95DB01277B6EB100957FED /* CRTextView.swift in Sources */,
 				BB0E8B9E277A1B560047DFB4 /* ContentView.swift in Sources */,
+				BB95DB07277B6F3A00957FED /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +452,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BBBBE2E3279CC192003EC3E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBBBE2EA279CC192003EC3E5 /* CRAttributesDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -355,6 +472,11 @@
 			isa = PBXTargetDependency;
 			target = BB0E8B7D277A1B560047DFB4 /* CRAttributesDemo (macOS) */;
 			targetProxy = BB0E8B92277A1B560047DFB4 /* PBXContainerItemProxy */;
+		};
+		BBBBE2EC279CC192003EC3E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB0E8B77277A1B560047DFB4 /* CRAttributesDemo (iOS) */;
+			targetProxy = BBBBE2EB279CC192003EC3E5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -473,8 +595,10 @@
 		BB0E8BA6277A1B560047DFB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "CRAttributesDemo (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 48ARUEM5RP;
@@ -494,17 +618,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.cr3.CRAttributesDemo;
 				PRODUCT_NAME = CRAttributesDemo;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
 		BB0E8BA7277A1B560047DFB4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "CRAttributesDemo (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 48ARUEM5RP;
@@ -524,9 +651,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.cr3.CRAttributesDemo;
 				PRODUCT_NAME = CRAttributesDemo;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -537,12 +665,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 48ARUEM5RP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -565,6 +695,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -591,6 +722,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = arm64;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 48ARUEM5RP;
@@ -611,6 +743,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = arm64;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 48ARUEM5RP;
@@ -666,6 +799,47 @@
 			};
 			name = Release;
 		};
+		BBBBE2ED279CC192003EC3E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 48ARUEM5RP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cr3.CRAttributesDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CRAttributesDemo.app/CRAttributesDemo";
+			};
+			name = Debug;
+		};
+		BBBBE2EE279CC192003EC3E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 48ARUEM5RP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cr3.CRAttributesDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CRAttributesDemo.app/CRAttributesDemo";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -714,20 +888,27 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		BBBBE2EF279CC192003EC3E5 /* Build configuration list for PBXNativeTarget "CRAttributesDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBBBE2ED279CC192003EC3E5 /* Debug */,
+				BBBBE2EE279CC192003EC3E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		BB0E8B6E277A1B560047DFB4 /* CRAttributesDemo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				BB0E8B6F277A1B560047DFB4 /* Shared.xcdatamodel */,
-			);
-			currentVersion = BB0E8B6F277A1B560047DFB4 /* Shared.xcdatamodel */;
-			path = CRAttributesDemo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCSwiftPackageProductDependency section */
+		BB95DAF8277A7A5000957FED /* CRAttributes */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CRAttributes;
 		};
-/* End XCVersionGroup section */
+		BB95DAFA277A7A9900957FED /* CRAttributes */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CRAttributes;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BB0E8B69277A1B560047DFB4 /* Project object */;
 }

@@ -12,7 +12,20 @@
 		<key>CRAttributesDemo (macOS).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>BB0E8B77277A1B560047DFB4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB0E8B84277A1B560047DFB4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

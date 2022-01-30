@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CoreDataModelDescription",
+        "repositoryURL": "https://github.com/dmytro-anokhin/core-data-model-description",
+        "state": {
+          "branch": null,
+          "revision": "e0b79309bc4e993ae26af3a9d2fc6f2c2c9bf5ad",
+          "version": "0.0.11"
+        }
+      },
+      {
+        "package": "SwiftProtobuf",
+        "repositoryURL": "https://github.com/apple/swift-protobuf.git",
+        "state": {
+          "branch": null,
+          "revision": "7e2c5f3cbbeea68e004915e3a8961e20bd11d824",
+          "version": "1.18.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

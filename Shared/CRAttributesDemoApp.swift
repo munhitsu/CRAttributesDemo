@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import CRAttributes
 
 @main
 struct CRAttributesDemoApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistenceController = CRStorageController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            MainView()
+                .environment(\.managedObjectContext, persistenceController.localContainer.viewContext)
         }
     }
 }
