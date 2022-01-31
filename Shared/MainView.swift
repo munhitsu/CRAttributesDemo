@@ -84,24 +84,7 @@ struct NotesListView: View {
 }
 
 
-struct DetailView: View {
-    @ObservedObject var note: Note
-    @State var isEditing: Bool = false
 
-    init(_ newNote: Note) {
-        self.note = newNote
-    }
-
-    var body: some View {
-        VStack {
-//            Text("\(note.title)")
-            TextField("Title", text: $note.title, prompt: Text("Title")).textFieldStyle(.roundedBorder)
-            CRTextView(textStorage: note.body, isEditing: $isEditing)
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        }
-        .navigationBarTitle(Text("Detail"))
-    }
-}
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {

@@ -126,7 +126,7 @@ extension CRObjectType {
         notesRoot = CRObject.getOrCreateVirtualRootObject(objectType: .note)
         observer.append(notesRoot.objectWillChange.sink {
             [weak self] _ in
-            print("Root got notesRoot.objectWillChange. Notifying observers")
+//            print("Root got notesRoot.objectWillChange. Notifying observers")
             self?.objectWillChange.send()
         })
     }
@@ -136,9 +136,9 @@ extension CRObjectType {
      */
     //TODO: optimise when it works
     var notes: [Note] {
-        print("notes:")
         let myNotes = notesRoot.containedEntities.map{ Note(from: $0 as! CRObject)}
         let sortedNotes = myNotes.sorted{ $0.operationID > $1.operationID }
+        print("notes:")
         for note in sortedNotes {
             print("'\(note.title)'", terminator: " ")
         }

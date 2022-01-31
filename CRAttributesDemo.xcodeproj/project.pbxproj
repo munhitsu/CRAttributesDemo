@@ -13,8 +13,8 @@
 		BB0E8B98277A1B560047DFB4 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B97277A1B560047DFB4 /* Tests_macOSLaunchTests.swift */; };
 		BB0E8B9B277A1B560047DFB4 /* CRAttributesDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B70277A1B560047DFB4 /* CRAttributesDemoApp.swift */; };
 		BB0E8B9C277A1B560047DFB4 /* CRAttributesDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B70277A1B560047DFB4 /* CRAttributesDemoApp.swift */; };
-		BB0E8B9D277A1B560047DFB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B71277A1B560047DFB4 /* ContentView.swift */; };
-		BB0E8B9E277A1B560047DFB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B71277A1B560047DFB4 /* ContentView.swift */; };
+		BB0E8B9D277A1B560047DFB4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B71277A1B560047DFB4 /* DetailView.swift */; };
+		BB0E8B9E277A1B560047DFB4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B71277A1B560047DFB4 /* DetailView.swift */; };
 		BB0E8B9F277A1B560047DFB4 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B72277A1B560047DFB4 /* Note.swift */; };
 		BB0E8BA0277A1B560047DFB4 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E8B72277A1B560047DFB4 /* Note.swift */; };
 		BB0E8BA1277A1B560047DFB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0E8B73277A1B560047DFB4 /* Assets.xcassets */; };
@@ -23,10 +23,8 @@
 		BB95DAFB277A7A9900957FED /* CRAttributes in Frameworks */ = {isa = PBXBuildFile; productRef = BB95DAFA277A7A9900957FED /* CRAttributes */; };
 		BB95DAFD277B6E9F00957FED /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DAFC277B6E9F00957FED /* MainView.swift */; };
 		BB95DAFE277B6E9F00957FED /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DAFC277B6E9F00957FED /* MainView.swift */; };
-		BB95DB00277B6EB100957FED /* CRTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DAFF277B6EB100957FED /* CRTextView.swift */; };
-		BB95DB01277B6EB100957FED /* CRTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DAFF277B6EB100957FED /* CRTextView.swift */; };
-		BB95DB06277B6F3A00957FED /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DB05277B6F3A00957FED /* Utils.swift */; };
-		BB95DB07277B6F3A00957FED /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DB05277B6F3A00957FED /* Utils.swift */; };
+		BB9C6ADE27A85790000714CF /* CRTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9C6ADD27A85790000714CF /* CRTextView.swift */; };
+		BB9C6ADF27A85790000714CF /* CRTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9C6ADD27A85790000714CF /* CRTextView.swift */; };
 		BBBBE2EA279CC192003EC3E5 /* CRAttributesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBE2E9279CC192003EC3E5 /* CRAttributesDemoTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +54,7 @@
 
 /* Begin PBXFileReference section */
 		BB0E8B70277A1B560047DFB4 /* CRAttributesDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRAttributesDemoApp.swift; sourceTree = "<group>"; };
-		BB0E8B71277A1B560047DFB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB0E8B71277A1B560047DFB4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BB0E8B72277A1B560047DFB4 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		BB0E8B73277A1B560047DFB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB0E8B78277A1B560047DFB4 /* CRAttributesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRAttributesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,9 +69,8 @@
 		BB0E8BB2277A1B700047DFB4 /* CRAttributes */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CRAttributes; path = ../CRAttributes; sourceTree = "<group>"; };
 		BB55C689277D0BDE00FCF431 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BB95DAFC277B6E9F00957FED /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		BB95DAFF277B6EB100957FED /* CRTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRTextView.swift; sourceTree = "<group>"; };
-		BB95DB05277B6F3A00957FED /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BB95DB08277B70EA00957FED /* CRAttributesDemo (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CRAttributesDemo (iOS).entitlements"; sourceTree = "<group>"; };
+		BB9C6ADD27A85790000714CF /* CRTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRTextView.swift; sourceTree = "<group>"; };
 		BBBBE2E7279CC192003EC3E5 /* CRAttributesDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRAttributesDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBBE2E9279CC192003EC3E5 /* CRAttributesDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRAttributesDemoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,10 +138,9 @@
 				BB95DB09277D03CA00957FED /* Model */,
 				BB0E8B70277A1B560047DFB4 /* CRAttributesDemoApp.swift */,
 				BB95DAFC277B6E9F00957FED /* MainView.swift */,
-				BB0E8B71277A1B560047DFB4 /* ContentView.swift */,
-				BB95DAFF277B6EB100957FED /* CRTextView.swift */,
+				BB0E8B71277A1B560047DFB4 /* DetailView.swift */,
+				BB9C6ADD27A85790000714CF /* CRTextView.swift */,
 				BB0E8B73277A1B560047DFB4 /* Assets.xcassets */,
-				BB95DB05277B6F3A00957FED /* Utils.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -415,9 +411,8 @@
 				BB0E8B9B277A1B560047DFB4 /* CRAttributesDemoApp.swift in Sources */,
 				BB0E8B9F277A1B560047DFB4 /* Note.swift in Sources */,
 				BB95DAFD277B6E9F00957FED /* MainView.swift in Sources */,
-				BB95DB00277B6EB100957FED /* CRTextView.swift in Sources */,
-				BB0E8B9D277A1B560047DFB4 /* ContentView.swift in Sources */,
-				BB95DB06277B6F3A00957FED /* Utils.swift in Sources */,
+				BB0E8B9D277A1B560047DFB4 /* DetailView.swift in Sources */,
+				BB9C6ADE27A85790000714CF /* CRTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,9 +423,8 @@
 				BB0E8B9C277A1B560047DFB4 /* CRAttributesDemoApp.swift in Sources */,
 				BB0E8BA0277A1B560047DFB4 /* Note.swift in Sources */,
 				BB95DAFE277B6E9F00957FED /* MainView.swift in Sources */,
-				BB95DB01277B6EB100957FED /* CRTextView.swift in Sources */,
-				BB0E8B9E277A1B560047DFB4 /* ContentView.swift in Sources */,
-				BB95DB07277B6F3A00957FED /* Utils.swift in Sources */,
+				BB0E8B9E277A1B560047DFB4 /* DetailView.swift in Sources */,
+				BB9C6ADF27A85790000714CF /* CRTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
