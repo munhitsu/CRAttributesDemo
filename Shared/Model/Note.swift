@@ -138,7 +138,7 @@ extension CRObjectType {
     var notes: [Note] {
         print("notes:")
         let myNotes = notesRoot.containedEntities.map{ Note(from: $0 as! CRObject)}
-        let sortedNotes = myNotes.sorted{ $0.title < $1.title }
+        let sortedNotes = myNotes.sorted{ $0.operationID > $1.operationID }
         for note in sortedNotes {
             print("'\(note.title)'", terminator: " ")
         }
@@ -154,6 +154,7 @@ extension CRObjectType {
             print("\(note.operationID.lamport):'\(note.title)'", terminator: " ")
         }
         print("")
+        print("Last lamport \(lastLamport)")
     }
 }
 

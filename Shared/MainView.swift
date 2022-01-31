@@ -94,7 +94,8 @@ struct DetailView: View {
 
     var body: some View {
         VStack {
-            Text("\(note.title)")
+//            Text("\(note.title)")
+            TextField("Title", text: $note.title, prompt: Text("Title")).textFieldStyle(.roundedBorder)
             CRTextView(textStorage: note.body, isEditing: $isEditing)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         }
