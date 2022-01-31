@@ -31,7 +31,11 @@ extension CRObjectType {
     private var _body: CRAttributeMutableString
 
     var operationID: CROperationID {
-        crObject.operationID
+        crObject.operationID!
+    }
+    
+    var hasTombstone: Bool? {
+        crObject.hasTombstone
     }
     
     /**
@@ -147,7 +151,7 @@ extension CRObjectType {
         let myNotes = notesRoot.containedEntities.map{ Note(from: $0 as! CRObject)}
         let sortedNotes = myNotes.sorted{ $0.operationID < $1.operationID }
         for note in sortedNotes {
-            print("'\(note.title)'", terminator: " ")
+            print("\(note.operationID.lamport):'\(note.title)'", terminator: " ")
         }
         print("")
     }

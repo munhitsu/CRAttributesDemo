@@ -1,4 +1,5 @@
-#  CRAttributesDemo
+#  CRAttributesDemo (WIP)
+A demonstration of CRAttriutes
 
 ## TODO
 - [x] Note creation to update UI
