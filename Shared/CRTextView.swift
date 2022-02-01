@@ -32,11 +32,8 @@ struct CRTextView: UIViewRepresentable {
         let textView = UITextView(frame: .infinite, textContainer: textContainer)
         textView.delegate = context.coordinator
 
-//        let defaultFont = UIFont.preferredFont(forTextStyle: .body)
-//        let defaultColor:UIColor = .label
-//
-//        textView.font = YuStorage.defaultFont
-//        textView.textColor = YuStorage.defaultForegroundColor
+        textView.font = UIFont.preferredFont(forTextStyle: .body)
+        textView.textColor = .label
 
         textView.isScrollEnabled = true
         textView.isEditable = true

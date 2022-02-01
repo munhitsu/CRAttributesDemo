@@ -19,10 +19,13 @@ struct DetailView: View {
 
     var body: some View {
         VStack {
-//            Text("\(note.title)")
-            TextField("Title", text: $note.title, prompt: Text("Title")).textFieldStyle(.roundedBorder)
-            CRTextView(textStorage: note.body)
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            if note.hasTombstone == false { //FIXME: weird it's not noticing that hasTombstone=true
+                TextField("Title", text: $note.title, prompt: Text("Title")).textFieldStyle(.roundedBorder)
+                CRTextView(textStorage: note.body)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            } else {
+                Text("Detail view content goes here")
+            }
         }
         .navigationBarTitle(Text("Detail"))
     }
