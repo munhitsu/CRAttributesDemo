@@ -25,7 +25,7 @@ extension CRObjectType {
 
 @MainActor public class Note: ObservableObject {
     var crObject: CRObject
-
+    
     private var _is_pinned: CRAttributeBool
     private var _title: CRAttributeString
     private var _body: CRAttributeMutableString
@@ -101,7 +101,9 @@ extension CRObjectType {
      this container is later updated on every related db update
      */
     public static func rootNote() -> Note {
-        let root = CRObject.getOrCreateVirtualRootObject(objectType: .note)
+        let context = CRStorageController.shared.localContainer.viewContext
+
+        let root = CRObject.getOrCreateVirtualRootObject(context: context, objectType: .note)
         return Note(from: root)
         //TODO: cache in a singleton
     }
@@ -123,7 +125,8 @@ extension CRObjectType {
     private var observer: [AnyCancellable] = []
     
     init() {
-        notesRoot = CRObject.getOrCreateVirtualRootObject(objectType: .note)
+        let context = CRStorageController.shared.localContainer.viewContext
+        notesRoot = CRObject.getOrCreateVirtualRootObject(context: context, objectType: .note)
         observer.append(notesRoot.objectWillChange.sink {
             [weak self] _ in
 //            print("Root got notesRoot.objectWillChange. Notifying observers")

@@ -25,6 +25,8 @@
 		BB95DAFE277B6E9F00957FED /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95DAFC277B6E9F00957FED /* MainView.swift */; };
 		BB9C6ADE27A85790000714CF /* CRTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9C6ADD27A85790000714CF /* CRTextView.swift */; };
 		BB9C6ADF27A85790000714CF /* CRTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9C6ADD27A85790000714CF /* CRTextView.swift */; };
+		BB9C6AE127A9F1CA000714CF /* Data Assets in Resources */ = {isa = PBXBuildFile; fileRef = BB9C6AE027A9F1CA000714CF /* Data Assets */; };
+		BB9C6AE327A9F1DA000714CF /* Data Assets in Resources */ = {isa = PBXBuildFile; fileRef = BB9C6AE227A9F1DA000714CF /* Data Assets */; };
 		BBBBE2EA279CC192003EC3E5 /* CRAttributesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBE2E9279CC192003EC3E5 /* CRAttributesDemoTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		BB95DAFC277B6E9F00957FED /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BB95DB08277B70EA00957FED /* CRAttributesDemo (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CRAttributesDemo (iOS).entitlements"; sourceTree = "<group>"; };
 		BB9C6ADD27A85790000714CF /* CRTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRTextView.swift; sourceTree = "<group>"; };
+		BB9C6AE027A9F1CA000714CF /* Data Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Data Assets"; path = "../CRAttributes/Data Assets"; sourceTree = "<group>"; };
+		BB9C6AE227A9F1DA000714CF /* Data Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Data Assets"; path = "../CRAttributes/Data Assets"; sourceTree = "<group>"; };
 		BBBBE2E7279CC192003EC3E5 /* CRAttributesDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRAttributesDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBBE2E9279CC192003EC3E5 /* CRAttributesDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRAttributesDemoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,8 @@
 		BB0E8B68277A1B560047DFB4 = {
 			isa = PBXGroup;
 			children = (
+				BB9C6AE027A9F1CA000714CF /* Data Assets */,
+				BB9C6AE227A9F1DA000714CF /* Data Assets */,
 				BB55C689277D0BDE00FCF431 /* README.md */,
 				BB95DB08277B70EA00957FED /* CRAttributesDemo (iOS).entitlements */,
 				BB0E8BB1277A1B700047DFB4 /* Packages */,
@@ -369,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB0E8BA1277A1B560047DFB4 /* Assets.xcassets in Resources */,
+				BB9C6AE127A9F1CA000714CF /* Data Assets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB0E8BA2277A1B560047DFB4 /* Assets.xcassets in Resources */,
+				BB9C6AE327A9F1DA000714CF /* Data Assets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
