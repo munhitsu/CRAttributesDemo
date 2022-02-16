@@ -26,9 +26,9 @@ extension CRObjectType {
 @MainActor public class Note: ObservableObject {
     var crObject: CRObject
     
-    private var _is_pinned: CRAttributeBool
-    private var _title: CRAttributeString
-    private var _body: CRAttributeMutableString
+    var is_pinned_attribute: CRAttributeBool
+    var title_attribute: CRAttributeString
+    var body_attribute: CRAttributeMutableString
 
     var operationID: CROperationID {
         crObject.operationID!
@@ -43,9 +43,9 @@ extension CRObjectType {
      */
     init(from crObject: CRObject) {
         self.crObject = crObject
-        self._is_pinned = crObject.attribute(name: "is_pinned", attributeType: .boolean) as! CRAttributeBool
-        self._title = crObject.attribute(name: "title", attributeType: .string) as! CRAttributeString
-        self._body = crObject.attribute(name: "body", attributeType: .mutableString) as! CRAttributeMutableString
+        self.is_pinned_attribute = crObject.attribute(name: "is_pinned", attributeType: .boolean) as! CRAttributeBool
+        self.title_attribute = crObject.attribute(name: "title", attributeType: .string) as! CRAttributeString
+        self.body_attribute = crObject.attribute(name: "body", attributeType: .mutableString) as! CRAttributeMutableString
     }
 
     /**
@@ -53,9 +53,9 @@ extension CRObjectType {
      */
     public init() {
         self.crObject = CRObject(objectType: .note, container: nil)
-        self._is_pinned = crObject.attribute(name: "is_pinned", attributeType: .boolean) as! CRAttributeBool
-        self._title = crObject.attribute(name: "title", attributeType: .string) as! CRAttributeString
-        self._body = crObject.attribute(name: "body", attributeType: .mutableString) as! CRAttributeMutableString
+        self.is_pinned_attribute = crObject.attribute(name: "is_pinned", attributeType: .boolean) as! CRAttributeBool
+        self.title_attribute = crObject.attribute(name: "title", attributeType: .string) as! CRAttributeString
+        self.body_attribute = crObject.attribute(name: "body", attributeType: .mutableString) as! CRAttributeMutableString
     }
     
     public convenience init(title: String) {
@@ -70,10 +70,10 @@ extension CRObjectType {
 
     var is_pinned: Bool {
         get {
-            _is_pinned.value ?? false
+            is_pinned_attribute.value ?? false
         }
         set {
-            _is_pinned.value = newValue
+            is_pinned_attribute.value = newValue
         }
         
     }
@@ -82,19 +82,18 @@ extension CRObjectType {
     
     var title: String {
         get {
-            _title.value ?? ""
+            title_attribute.value ?? ""
         }
         set {
-            _title.value = newValue
+            title_attribute.value = newValue
         }
     }
 
     var body: CRTextStorage {
         get {
-            _body.textStorage
+            body_attribute.textStorage
         }
     }
-    
     
     /**
      returns a Note that contains all the notes whose container was nil

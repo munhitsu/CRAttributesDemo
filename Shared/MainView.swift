@@ -58,13 +58,6 @@ struct NotesListView: View {
                     })
                     Button(action: {
                         withAnimation {
-                            asyncImportDebug()
-                        }
-                    }, label: {
-                        Text("Import")
-                    })
-                    Button(action: {
-                        withAnimation {
                             _ = Note(title: "1")
                         }
                     }, label: {
@@ -77,6 +70,12 @@ struct NotesListView: View {
         }
     }
     func asyncImportDebug() {
+        let newNote = Note(title:"debug import")
+        newNote.body.loadFromJsonIndexDebug(limiter: 1000, bundle: Bundle.main)
+
+        
+        
+        
 //        DispatchQueue.global(qos: .userInitiated).async {
 //            _ = Note.createFromJsonIndexDebug(in: PersistenceController.shared.containerTaskContext, limiter: 10000, sync: true)
 //        }
