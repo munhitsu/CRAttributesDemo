@@ -32,18 +32,24 @@ struct DetailView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 HStack {
                     Button(action: {
-                        debugTemp()
+                        debugNote()
                     }, label: {
-                        Text("Debug temp")
+                        Text("Debug")
                     })
                     Button(action: {
                         debugImport()
                     }, label: {
-                        Text("Debug import")
+                        Text("Simulate sync")
                     })
                 }
             }
         }
+    }
+    
+    func debugNote() {
+        print("attribute value: '\(note.body_attribute.textStorage.string)'")
+        print("linked list:     '\(note.body_attribute.operation!.stringFromRGAList().0)'")
+        print("tree crawl:      '\(note.body_attribute.operation!.stringFromRGATree().0)'")
     }
     
     func debugImport() {
@@ -51,7 +57,7 @@ struct DetailView: View {
             //        note.body.loadFromJsonIndexDebug(limiter: 1000, bundle: Bundle.main)
                     note.body.replaceCharacters(in: NSRange(location: 0, length: 0), with: "local edit")
             //        let tempLocalContext = CRStorageController.shared.localContainer.newBackgroundContext()
-            let viewContext = CRStorageController.shared.localContainer.viewContext
+//            let viewContext = CRStorageController.shared.localContainer.viewContext
             //        let body_operation_id = note.body_attribute.operationID!
     //            let body_attribute = CRAttributeMutableString(from:body_operation_id.findOperationOrCreateGhost(in: viewContext))
             let fakePeerID = UUID()
@@ -63,21 +69,21 @@ struct DetailView: View {
             forest.version = 0
             forest.peerID = fakePeerID.data
 
-            var tree = ProtoOperationsTree()
-            tree.containerID = ProtoOperationID.with{
+            var stringTree = ProtoOperationsTree()
+            stringTree.containerID = ProtoOperationID.with{
                 $0.lamport = body_attribute.operationID!.lamport
                 $0.peerID = body_attribute.operationID!.peerID.data
             }
             
-            tree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
+            stringTree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
                 $0.version = 0
                 $0.id.lamport = 1
                 $0.id.peerID  = fakePeerID.data
                 $0.contribution = Int32(UnicodeScalar("a").value)
-                $0.parentID.lamport = 0
-                $0.parentID.peerID = UUID.zero.data
+                $0.parentID.lamport = body_attribute.operationID!.lamport
+                $0.parentID.peerID = body_attribute.operationID!.peerID.data
             })
-            tree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
+            stringTree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
                 $0.version = 0
                 $0.id.lamport = 2
                 $0.id.peerID  = fakePeerID.data
@@ -85,7 +91,7 @@ struct DetailView: View {
                 $0.parentID.lamport = 1
                 $0.parentID.peerID = fakePeerID.data
             })
-            tree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
+            stringTree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
                 $0.version = 0
                 $0.id.lamport = 3
                 $0.id.peerID  = fakePeerID.data
@@ -106,25 +112,72 @@ struct DetailView: View {
                 $0.string = "remote edit"
             }
             
-
+            var disconnectedStringTree = ProtoOperationsTree()
+            disconnectedStringTree.containerID = ProtoOperationID.with{
+                $0.lamport = body_attribute.operationID!.lamport
+                $0.peerID = body_attribute.operationID!.peerID.data
+            }
             
+            disconnectedStringTree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
+                $0.version = 0
+                $0.id.lamport = 7
+                $0.id.peerID  = fakePeerID.data
+                $0.contribution = Int32(UnicodeScalar("g").value)
+                $0.parentID.lamport = 6
+                $0.parentID.peerID = fakePeerID.data
+            })
+            disconnectedStringTree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
+                $0.version = 0
+                $0.id.lamport = 8
+                $0.id.peerID  = fakePeerID.data
+                $0.contribution = Int32(UnicodeScalar("h").value)
+                $0.parentID.lamport = 7
+                $0.parentID.peerID = fakePeerID.data
+            })
+            disconnectedStringTree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
+                $0.version = 0
+                $0.id.lamport = 9
+                $0.id.peerID  = fakePeerID.data
+                $0.contribution = Int32(UnicodeScalar("i").value)
+                $0.parentID.lamport = 8
+                $0.parentID.peerID = fakePeerID.data
+            })
+
+            var orphanedStringTree = ProtoOperationsTree()
+            orphanedStringTree.containerID = ProtoOperationID.with{
+                $0.lamport = 100
+                $0.peerID = fakePeerID.data
+            }
+            
+            orphanedStringTree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
+                $0.version = 0
+                $0.id.lamport = 101
+                $0.id.peerID  = fakePeerID.data
+                $0.contribution = Int32(UnicodeScalar("1").value)
+                $0.parentID.lamport = 100
+                $0.parentID.peerID = fakePeerID.data
+            })
+
             
             forest.trees.append(titleTree)
-            forest.trees.append(tree)
+            forest.trees.append(stringTree)
+            forest.trees.append(disconnectedStringTree)
+            forest.trees.append(orphanedStringTree)
 
             let replicationContext = CRStorageController.shared.replicationContainer.newBackgroundContext()
-            let opForest:CDOperationsForest = await replicationContext.perform {
-                let opForest = CDOperationsForest(context: replicationContext, from:forest)
+//            let opForest:CDOperationsForest =
+            await replicationContext.perform {
+                let _ = CDOperationsForest(context: replicationContext, from:forest)
                 try! replicationContext.save()
                 // let's try accessign replication container on the newBackgroundContext
 
                 // let's try accessign replication container on the existing bgContext
 //                CRStorageController.shared.replicationController.processDownstreamForest(forest: opForest.objectID)
 //                processDownstreamHistoryAsync()
-                return opForest
+//                return opForest
             }
-            let rc = CRReplicationController(localContext: CRStorageController.shared.localContainer.viewContext, replicationContext: replicationContext, skipTimer: true, skipRemoteChanges: true)
-            await rc.processDownstreamForest(forest: opForest.objectID)
+//            let rc = CRReplicationController(localContext: CRStorageController.shared.localContainer.viewContext, replicationContext: replicationContext, skipTimer: true, skipRemoteChanges: true)
+//            await rc.processDownstreamForest(forest: opForest.objectID)
 
 //            body_attribute.operationID
             
@@ -144,16 +197,6 @@ struct DetailView: View {
             // push to sync storage
             // purge context (1)
             // process new trees/forests (can skip detection of new ones on sync storage)
-        }
-    }
-    
-    func debugTemp() {
-        let tempLocalContext = CRStorageController.shared.localContainer.newBackgroundContext()
-        let body_operation_id = note.body_attribute.operationID!
-        
-        tempLocalContext.performAndWait {
-            let body_attribute = CRAttributeMutableString(from:body_operation_id.findOperationOrCreateGhost(in: tempLocalContext))
-            body_attribute.textStorage.replaceCharacters(in: NSRange(location: 0, length: 0), with: "Hello")
         }
     }
 }
