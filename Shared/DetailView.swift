@@ -52,10 +52,17 @@ struct DetailView: View {
         print("tree crawl:      '\(note.body_attribute.operation!.stringFromRGATree().0)'")
     }
     
+    /**
+     consolidated should look:
+     title: "remote edit"
+     step1: "local edit."
+     step2: "local edit.c"
+     step2: "local edit.Ac"
+     */
     func debugImport() {
         Task {
             //        note.body.loadFromJsonIndexDebug(limiter: 1000, bundle: Bundle.main)
-                    note.body.replaceCharacters(in: NSRange(location: 0, length: 0), with: "local edit")
+                    note.body.replaceCharacters(in: NSRange(location: 0, length: 0), with: "local edit.")
             //        let tempLocalContext = CRStorageController.shared.localContainer.newBackgroundContext()
 //            let viewContext = CRStorageController.shared.localContainer.viewContext
             //        let body_operation_id = note.body_attribute.operationID!
@@ -83,14 +90,22 @@ struct DetailView: View {
                 $0.parentID.lamport = body_attribute.operationID!.lamport
                 $0.parentID.peerID = body_attribute.operationID!.peerID.data
             })
-            stringTree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
+            var insert_b = ProtoStringInsertOperation.with {
                 $0.version = 0
                 $0.id.lamport = 2
                 $0.id.peerID  = fakePeerID.data
                 $0.contribution = Int32(UnicodeScalar("b").value)
                 $0.parentID.lamport = 1
                 $0.parentID.peerID = fakePeerID.data
+            }
+            insert_b.deleteOperations.append(ProtoDeleteOperation.with {
+                $0.version = 0
+                $0.id.lamport = 4
+                $0.id.peerID  = fakePeerID.data
+                $0.parentID.lamport = 2
+                $0.parentID.peerID = fakePeerID.data
             })
+            stringTree.stringInsertOperationsList.stringInsertOperations.append(insert_b)
             stringTree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
                 $0.version = 0
                 $0.id.lamport = 3
@@ -99,7 +114,7 @@ struct DetailView: View {
                 $0.parentID.lamport = 2
                 $0.parentID.peerID = fakePeerID.data
             })
-            
+
             var titleTree = ProtoOperationsTree()
             titleTree.containerID = ProtoOperationID.with{
                 $0.lamport = title_attribute.operationID!.lamport
@@ -118,6 +133,7 @@ struct DetailView: View {
                 $0.peerID = body_attribute.operationID!.peerID.data
             }
             
+            // disconnected "ghi"
             disconnectedStringTree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
                 $0.version = 0
                 $0.id.lamport = 7
@@ -143,6 +159,7 @@ struct DetailView: View {
                 $0.parentID.peerID = fakePeerID.data
             })
 
+            // orphaned "1"
             var orphanedStringTree = ProtoOperationsTree()
             orphanedStringTree.containerID = ProtoOperationID.with{
                 $0.lamport = 100
@@ -158,11 +175,44 @@ struct DetailView: View {
                 $0.parentID.peerID = fakePeerID.data
             })
 
+            var deleteTree = ProtoOperationsTree()
+            deleteTree.containerID = ProtoOperationID.with {
+                $0.lamport = body_attribute.operationID!.lamport
+                $0.peerID = body_attribute.operationID!.peerID.data
+            }
+            
+            deleteTree.deleteOperation = ProtoDeleteOperation.with {
+                $0.version = 0
+                $0.id.lamport = 200
+                $0.id.peerID  = fakePeerID.data
+                $0.parentID.lamport = 1
+                $0.parentID.peerID = fakePeerID.data
+            }
+            
+            // insert after at deleted
+            var insertAtDeletedStringTree = ProtoOperationsTree()
+            insertAtDeletedStringTree.containerID = ProtoOperationID.with{
+                $0.lamport = body_attribute.operationID!.lamport
+                $0.peerID = body_attribute.operationID!.peerID.data
+            }
+            
+            insertAtDeletedStringTree.stringInsertOperationsList.stringInsertOperations.append(ProtoStringInsertOperation.with {
+                $0.version = 0
+                $0.id.lamport = 300
+                $0.id.peerID  = fakePeerID.data
+                $0.contribution = Int32(UnicodeScalar("A").value)
+                $0.parentID.lamport = 1
+                $0.parentID.peerID = fakePeerID.data
+            })
+
+            
             
             forest.trees.append(titleTree)
             forest.trees.append(stringTree)
             forest.trees.append(disconnectedStringTree)
             forest.trees.append(orphanedStringTree)
+            forest.trees.append(deleteTree)
+            forest.trees.append(insertAtDeletedStringTree)
 
             let replicationContext = CRStorageController.shared.replicationContainer.newBackgroundContext()
 //            let opForest:CDOperationsForest =

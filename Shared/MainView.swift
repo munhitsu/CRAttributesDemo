@@ -28,7 +28,11 @@ struct NotesListView: View {
 //    @FetchRequest(
 //        sortDescriptors: [NSSortDescriptor(keyPath: \Note.timestamp, ascending: true)],
 //        animation: .default) var notes: FetchedResults<Note>
-    @StateObject var root = Root()
+    @StateObject var root: Root
+    
+    init() {
+        self._root = StateObject(wrappedValue: Root())
+    }
     
     var body: some View {
         List {
